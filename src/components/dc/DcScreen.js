@@ -1,9 +1,9 @@
 import React from "react";
 
-export const Marvel = () => {
+export const DcScreen = () => {
   return (
     <div>
-      <h1>Marvel</h1>
+      <h1>DC</h1>
     </div>
   );
 };

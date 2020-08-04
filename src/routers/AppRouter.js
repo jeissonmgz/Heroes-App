@@ -1,8 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Navbar } from "../components/ui/Navbar";
 import { LoginScreen } from "../components/login/LoginScreen";
-import { Marvel } from "../components/marvel/Marvel";
+import { MarvelScreen } from "../components/marvel/MarvelScreen";
 
 export const AppRouter = () => {
   return (
@@ -11,7 +11,7 @@ export const AppRouter = () => {
         <Navbar />
         <Switch>
           <Route exact path="/login" component={LoginScreen} />
-          <Route exact path="/" component={Marvel} />
+          <Route exact path="/" component={MarvelScreen} />
         </Switch>
       </div>
     </Router>

@@ -4,6 +4,8 @@ import { types } from "../../types/types";
 
 export const LoginScreen = ({ history }) => {
   const { dispatch } = useContext(AuthContext);
+
+  const lastPath = localStorage.getItem("lastPath") || "/";
   const handleLogin = () => {
     dispatch({
       type: types.login,
@@ -12,7 +14,7 @@ export const LoginScreen = ({ history }) => {
       },
     });
     //this replace my navigation if i want save my navigation should use push no replace
-    history.replace("/");
+    history.replace(lastPath);
   };
   return (
     <div className="container mt-5">

@@ -9,6 +9,9 @@ describe("<PrivateRoute />", () => {
       pathname: "/marvel",
     },
   };
+
+  Storage.prototype.setItem = jest.fn();
+
   test("should show component if auth, save localstorage", () => {
     const wrapper = mount(
       <MemoryRouter>
@@ -21,5 +24,9 @@ describe("<PrivateRoute />", () => {
       </MemoryRouter>
     );
     expect(wrapper.find("span").exists()).toBe(true);
+    expect(Storage.prototype.setItem).toHaveBeenCalledWith(
+      "lastPath",
+      "/marvel"
+    );
   });
 });

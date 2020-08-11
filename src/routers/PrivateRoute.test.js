@@ -29,4 +29,22 @@ describe("<PrivateRoute />", () => {
       "/marvel"
     );
   });
+
+  test("shouldn´t show component if isn´t auth", () => {
+    const wrapper = mount(
+      <MemoryRouter>
+        <PrivateRoute
+          isAuthenticated={false}
+          component={() => <span>Listo!</span>}
+          pathname=""
+          {...props}
+        />
+      </MemoryRouter>
+    );
+    expect(wrapper.find("span").exists()).toBe(false);
+    expect(Storage.prototype.setItem).toHaveBeenCalledWith(
+      "lastPath",
+      "/marvel"
+    );
+  });
 });

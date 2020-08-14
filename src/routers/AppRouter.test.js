@@ -25,7 +25,7 @@ describe("<AppRouter />", () => {
       dispatch: jest.fn(),
       user: {
         name: "Jase",
-        logged: false,
+        logged: true,
       },
     };
     const wrapper = mount(
@@ -33,6 +33,6 @@ describe("<AppRouter />", () => {
         <AppRouter />
       </AuthContext.Provider>
     );
-    expect(wrapper.find(".navbar")).exists().toBe(true);
+    expect(wrapper.find(".navbar").exists()).toBe(true);
   });
 });

@@ -10,10 +10,10 @@ export const Navbar = () => {
   } = useContext(AuthContext);
   const history = useHistory();
   const handleLogout = () => {
+    history.replace("/login");
     dispatch({
       type: types.logout,
     });
-    history.push("/login");
   };
   return (
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark">

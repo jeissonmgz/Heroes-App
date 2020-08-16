@@ -32,6 +32,7 @@ export const SearchScreen = ({ history }) => {
               placeholder="Find your hero"
               className="form-control"
               autoComplete="off"
+              value={searchText}
               onChange={handleInputChange}
             />
             <button
